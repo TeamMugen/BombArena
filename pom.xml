@@ -4,7 +4,7 @@
 
     <groupId>mc.euro</groupId>
     <artifactId>demolition</artifactId>
-    <version>1.2.6</version>
+    <version>1.2.7</version>
     <packaging>jar</packaging>
     <name>Demolition</name>
     <properties>
@@ -39,8 +39,8 @@
             <url>http://repo.kitteh.org/content/repositories/public/</url>
         </repository>
         <repository>
-            <id>hawk-repo</id>
-            <url>http://ci.hawkfalcon.com/plugin/repository/everything/</url>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.org/repository/maven-public/</url>
         </repository>
     </repositories>
     <!-- Dependencies -->
@@ -65,9 +65,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.gmail.filoghost</groupId>
-            <artifactId>holograms</artifactId>
-            <version>1.8.5</version>
+            <groupId>com.gmail.filoghost.holographicdisplays</groupId>
+            <artifactId>holographicdisplays-api</artifactId>
+            <version>2.3.2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

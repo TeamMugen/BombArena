@@ -1,9 +1,10 @@
 package mc.euro.demolition.holograms;
 
-import com.gmail.filoghost.holograms.api.Hologram;
-import com.gmail.filoghost.holograms.api.HolographicDisplaysAPI;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import com.gmail.filoghost.holographicdisplays.api.Hologram;
+import com.gmail.filoghost.holographicdisplays.api.HologramsAPI;
 import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
 
@@ -24,7 +25,8 @@ public class HolographicDisplay implements HologramInterface {
     @Override
     public int createBaseHologram(Location loc) {
         Location center = loc.clone().add(0.5, 1.2, 0.5);
-        Hologram hologram = HolographicDisplaysAPI.createHologram(plugin, center, "Target");
+        Hologram hologram = HologramsAPI.createHologram(plugin, center);
+        hologram.appendTextLine("Target");
         int hologramID = addHologram(hologram);
         return hologramID;
     }
@@ -32,7 +34,8 @@ public class HolographicDisplay implements HologramInterface {
     @Override
     public int createBombHologram(Location loc) {
         Location center = loc.clone().add(0.0, 0.4, 0.0);
-        Hologram hologram = HolographicDisplaysAPI.createHologram(plugin, center, "Bomb");
+        Hologram hologram = HologramsAPI.createHologram(plugin, center);
+        hologram.appendTextLine("Bomb");
         int hologramID = addHologram(hologram);
         return hologramID;
     }
