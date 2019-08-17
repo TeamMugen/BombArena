@@ -5,8 +5,8 @@
  * /bomb stats (player)
  * /bomb stats top X
  * /bomb spawnbomb (arena)
- * /bomb setbase (arena> (teamID)
- * /bomb setconfig (option> (value)
+ * /bomb setbase (arena) (teamID)
+ * /bomb setconfig (option) (value)
  * /bomb listconfig
  * /bomb debug
  */

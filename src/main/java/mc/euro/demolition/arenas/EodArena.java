@@ -218,12 +218,10 @@ public abstract class EodArena extends Arena {
     
     /**
      * This method makes sure that the bomb doesn't despawn during a match.
-     * 
-     * <pre>
+     *
      * - is the item a bomb ?
      * - ok, does someone already have the bomb in their inventory ?
      * - if not, cancel the ItemDespawnEvent.
-     * </pre>
      * @param e ItemDespawnEvent - Was it the bomb ? Or another item ?
      */
     @ArenaEventHandler(needsPlayer = false)
@@ -322,6 +320,8 @@ public abstract class EodArena extends Arena {
     
     /**
      * Is WorldGuard denying bomb plants ?
+     *
+     * @param e the event
      */
     @ArenaEventHandler (priority=EventPriority.HIGHEST)
     public void onBaseInteraction(PlayerInteractEvent e) {
@@ -336,12 +336,12 @@ public abstract class EodArena extends Arena {
     
     /**
      * This event handles planting and defusing the bomb.
-     * 
+     *
      * <pre>
      * Exit Conditions:
      * - Not a Base Inventory
      * - Bomb Carrier is null
-     * <pre>
+     * </pre>
      * 
      * @param e InventoryOpenEvent - Is it an actual Base Inventory ? (Each team must have a base).
      */
@@ -415,7 +415,7 @@ public abstract class EodArena extends Arena {
     
     /**
      * This method triggers a new bombDropEvent if a player dies with the bomb.
-     * 
+     *
      * <pre>
      * It also lets all the players know the location of the bomb.
      *   - But only if it's on the ground, never if a player has it.
@@ -490,7 +490,7 @@ public abstract class EodArena extends Arena {
     
     /**
      * This event handles the scenario when the bomb is thrown on the ground.
-     * 
+     *
      * <pre>
      * 1. Point the compass to the direction of the bomb.
      * 2. Give a visual aid for the bomb location (not implemented yet).
