@@ -36,6 +36,8 @@ public class CompassHandler extends BukkitRunnable {
      * teams, then throw away the generated list. So essentially, it's a snapshot 
      * of all the players in the match at that point in time.
      * And that's why we have to continually call it: To get an updated and current list.
+     *
+     * @param arena the arena
      */
     public CompassHandler(Arena arena) {
         this.arena = arena;

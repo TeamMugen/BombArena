@@ -43,6 +43,12 @@ public class SndArenaFactory implements ArenaFactory {
      * Works by shielding other classes from the ArenaFactory import.
      * Any classes that have this import would break on old BA versions.
      * This class is invoked at runtime only if a newer version of BA is installed.
+     *
+     * @param jplugin the plugin to register the competition with
+     * @param name the name of the competition
+     * @param cmd the command for the competition
+     * @param clazz the BombArena class
+     * @param executor the custom command executor
      */
     public static void registerCompetition(JavaPlugin jplugin, String name, String cmd, Class<? extends SndArena> clazz, CustomCommandExecutor executor) {
         SndArenaFactory factory = new SndArenaFactory((BombPlugin) jplugin);

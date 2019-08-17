@@ -51,8 +51,7 @@ import org.bukkit.scheduler.BukkitTask;
 
 /**
  * EodArena is the parent for BombArena and SndArena.
- * 
- * <pre>
+ *
  * EOD = Explosive Ordnance Disposal.
  * EodArena contains all fields and methods common to both arenas.
  * 
@@ -61,7 +60,6 @@ import org.bukkit.scheduler.BukkitTask;
  * For BombArena, the objective is to destroy the other teams base.
  * 
  * For SndArena, one team guards the bases while the other team destroys one to win.
- * </pre>
  * 
  * @author Nikolai
  */
@@ -122,7 +120,8 @@ public abstract class EodArena extends Arena {
      * This will only cancel PlantTimer and DefuseTimer.
      * 
      * Only the PlantTimer has the ability to cancel the DetonationTimer.
-     * 
+     *
+     * @param p the player to cancel the timer for
      */
     public void cancelTimer(Player p) {
         for (String defuser : defuseTimers.keySet()) {
@@ -153,6 +152,8 @@ public abstract class EodArena extends Arena {
     
     /**
      * It is possible to return a null timer.
+     *
+     * @return the detonation timer
      */
     public DetonationTimer getDetonationTimer() {
         DetonationTimer detTimer = (plantTimer == null) ? null : plantTimer.getDetonationTimer();
@@ -175,6 +176,8 @@ public abstract class EodArena extends Arena {
     
     /**
      * Not used: createBombHologram() + setCompass().
+     *
+     * @param e the event
      */
     @ArenaEventHandler
     public void onMatchStartEvent(MatchStartEvent e) {
@@ -193,6 +196,8 @@ public abstract class EodArena extends Arena {
      * This method sets the compass direction when the bomb spawns.
      * 
      * Without (needsPlayer=false), ItemSpawnEvent would break all other events.
+     *
+     * @param e the event
      */ 
     @ArenaEventHandler(needsPlayer = false)
     public void onBombSpawn(ItemSpawnEvent e) {
@@ -465,6 +470,8 @@ public abstract class EodArena extends Arena {
      * Only ends the match if the DetonationTimer doesn't exist.
      * Otherwise, let the DetonationTimer/DefuseTimer end the match.
      * The dead team can still win via the DetonationTimer.
+     *
+     * @param e the event
      */
     @ArenaEventHandler
     public void onTeamDeathEvent(TeamDeathEvent e) {
@@ -580,6 +587,8 @@ public abstract class EodArena extends Arena {
      * 
      * This is to help out BOTH attackers and defenders find where they need to go 
      * if they're unfamiliar with the map.
+     *
+     * @param loc the location to set the compass for
      */
     protected void setCompass(Location loc) {
         if (compass == null) compass = new CompassHandler(this);

@@ -56,6 +56,8 @@ public class BombArena extends EodArena {
     
     /**
      * This constructor requires BattleArena v3.9.8+.
+     *
+     * @param plugin the plugin
      */
     public BombArena(BombPlugin plugin) {
         super(plugin); // I love this line of code :P
@@ -222,7 +224,7 @@ public class BombArena extends EodArena {
     }
     
     /**
-     * Used by BombPlugin->updateBasesYml() to transfer data from bases.yml to arenas.yml.
+     * Used by BombPlugin- updateBasesYml() to transfer data from bases.yml to arenas.yml.
      * @param arenaName the name of the arena
      * @return Map of key-value pairs, where the key is an incremental ordinal number starting at 1.
      * @deprecated Labeled as deprecated to prevent accidental usage.
