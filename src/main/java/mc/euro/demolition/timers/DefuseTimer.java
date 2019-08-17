@@ -1,8 +1,5 @@
 package mc.euro.demolition.timers;
 
-import java.util.Map;
-import mc.alk.arena.competition.match.Match;
-import mc.alk.arena.objects.arenas.Arena;
 import mc.alk.arena.objects.teams.ArenaTeam;
 import mc.euro.demolition.BombPlugin;
 import mc.euro.demolition.arenas.EodArena;
@@ -14,12 +11,12 @@ import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 
 /**
- * Example: new DefuseTimer(InventoryOpenEvent e, getMatch()). <br/><br/>
+ * Example: new DefuseTimer(InventoryOpenEvent e, getMatch()).
  * 
- * plugin.defTimers.put(getMatch().getID(), new PlantTimer(e, getMatch())); <br/>
- * plugin.defTimers.get(getMatch().getID()).runTaskTimer(plugin, 0L, 20L); <br/><br/>
+ * plugin.defTimers.put(getMatch().getID(), new PlantTimer(e, getMatch()));
+ * plugin.defTimers.get(getMatch().getID()).runTaskTimer(plugin, 0L, 20L);
  * 
- * There can be a DefuseTimer for each player attempting to defuse the bomb. <br/><br/>
+ * There can be a DefuseTimer for each player attempting to defuse the bomb.
  * 
  */
 public class DefuseTimer extends BukkitRunnable {

@@ -12,10 +12,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 /**
- * Continually update players compass to a new Location every X ticks. <br/><br/>
+ * Continually update players compass to a new Location every X ticks.
  * 
  * This class might be moved to the BattleArena framework so that other 
- * BattleArena extensions, modules, & addons have access.
+ * BattleArena extensions, modules, and addons have access.
  * 
  * @author Nikolai
  */
@@ -27,22 +27,22 @@ public class CompassHandler extends BukkitRunnable {
     /**
      * Ideally, I would have liked this constructor to accept just a list of players.
      * But unfortunately, inside Arenas, a player could leave 
-     * the arena, and the list would be outdated once that happened. Why ? <br/><br/>
+     * the arena, and the list would be outdated once that happened. Why ?
      * 
-     * arena.getMatch().getPlayers()                                       <br/><br/>
+     * arena.getMatch().getPlayers()
      * 
      * Because getPlayers() does not return a reference to all the players 
      * in the match. getPlayers() will dynamically create a new list from the 
      * teams, then throw away the generated list. So essentially, it's a snapshot 
      * of all the players in the match at that point in time.
-     * And that's why we have to continually call it: To get an updated & current list.
+     * And that's why we have to continually call it: To get an updated and current list.
      */
     public CompassHandler(Arena arena) {
         this.arena = arena;
     }
     
     /**
-     * Given a list of locations, calculate the closest point & assign it to the 
+     * Given a list of locations, calculate the closest point and assign it to the
      * players compass.
      */
     @Override

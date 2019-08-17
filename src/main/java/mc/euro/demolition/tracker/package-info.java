@@ -1,4 +1,4 @@
 /**
- * All classes related to BattleTracker. <br/><br/>
+ * All classes related to BattleTracker.
  */
 package mc.euro.demolition.tracker;

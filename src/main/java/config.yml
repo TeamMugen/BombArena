@@ -32,7 +32,7 @@
 #     And 9 blocks does NOT do 5 dmg because the Radius is set to 8.
 # StartupDisplay: (integer) The number of ranks to print to the console during server startup.
 # DatabaseTable: '' This is the name of the table.
-#      # This name does NOT include the prefix & suffix that BattleTracker uses.
+#      # This name does NOT include the prefix and suffix that BattleTracker uses.
 #      # Exampe: 'Bomb' will show up in the database as
 #      # bt_Bomb_overall
 #      # bt_Bomb_tally

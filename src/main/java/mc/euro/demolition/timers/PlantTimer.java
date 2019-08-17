@@ -18,15 +18,15 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 /**
- * Example: new PlantTimer(InventoryOpenEvent e, getMatch()). <br/><br/>
+ * Example: new PlantTimer(InventoryOpenEvent e, getMatch()).
  * 
- * plugin.pTimers.put(getMatch().getID(), new PlantTimer(e, getMatch())); <br/>
- * plugin.pTimers.get(getMatch().getID()).runTaskTimer(plugin, 0L, 20L); <br/><br/>
+ * plugin.pTimers.put(getMatch().getID(), new PlantTimer(e, getMatch()));
+ * plugin.pTimers.get(getMatch().getID()).runTaskTimer(plugin, 0L, 20L);
  * 
- * This is always the 1st Timer to be started. <br/>
- * There can only be one PlantTimer per match. <br/><br/>
+ * This is always the 1st Timer to be started.
+ * There can only be one PlantTimer per match.
  * 
- * getPlayer() - used to get the player that started this Timer. <br/>
+ * getPlayer() - used to get the player that started this Timer.
  * 
  */
 public class PlantTimer extends BukkitRunnable {
@@ -88,7 +88,7 @@ public class PlantTimer extends BukkitRunnable {
     }
     
     public void setCancelled(boolean stop) {
-        plugin.debug.log("PlantTimer->setCancelled(" + stop + ")");
+        plugin.debug.log("PlantTimer- setCancelled(" + stop + ")");
         this.cancelled = stop;
         cancel();
     }

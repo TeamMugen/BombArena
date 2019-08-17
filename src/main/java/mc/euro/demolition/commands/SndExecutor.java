@@ -3,7 +3,7 @@ package mc.euro.demolition.commands;
 import mc.euro.demolition.BombPlugin;
 
 /**
- * Commands specific to SndArena. <br/><br/>
+ * Commands specific to SndArena.
  * 
  * @author Nikolai
  */

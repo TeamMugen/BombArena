@@ -28,10 +28,10 @@ import org.bukkit.inventory.ItemStack;
  * The objective is to destroy the other teams base.
  * 
  * <pre>
- * BombArena events & logic:
+ * BombArena events and logic:
  * onMatchStartEvent() - move functionality to onBombSpawn() ?
  * onBombSpawn() - create a hologram and point the compass to the bomb.
- * onBombPickup() - set HAT & point compass to the base. 
+ * onBombPickup() - set HAT and point compass to the base.
  * onBombCarrierLeave() - Did they log out or leave the arena with the bomb ?
  * onBombCarrierDeath() - Were they defusing ? If so, cancel their timer.
  * onBombDrop() - Make sure that other events don't cancel the bombDropEvent.
@@ -62,7 +62,7 @@ public class BombArena extends EodArena {
     }
     
     /**
-     * This method sets plugin.carriers, compass direction, and gives a hat. <br/><br/>
+     * This method sets plugin.carriers, compass direction, and gives a hat.
      * 
      * <pre>
      * 1. Give the bomb carrier a hat so that other players know WHO has the bomb.
@@ -127,6 +127,8 @@ public class BombArena extends EodArena {
      * - If so, start a DefuseTimer for this player.
      * - If not, check the plant conditions.
      * </pre>
+     * @param e the event
+     * @return if the player is defusing the bomb
      */
     @Override 
     public boolean isPlayerDefusing(InventoryOpenEvent e) {
@@ -163,6 +165,8 @@ public class BombArena extends EodArena {
      * - If so, start the Plant Timer: It takes about 5 to 10 seconds to plant the bomb.
      * - If not, cancel the InventoryOpenEvent.
      * </pre>
+     * @param e the event
+     * @return if the player is planting a bomb
      */
     @Override
     public boolean isPlayerPlanting(InventoryOpenEvent e) {
@@ -187,7 +191,7 @@ public class BombArena extends EodArena {
     }
     
     /**
-     * onStart() is called at the start of a Match. <br/><br/>
+     * onStart() is called at the start of a Match.
      * 
      * Order: onStart(), onComplete(), onFinish() 
      */
@@ -219,7 +223,7 @@ public class BombArena extends EodArena {
     
     /**
      * Used by BombPlugin->updateBasesYml() to transfer data from bases.yml to arenas.yml.
-     * @param arenaName 
+     * @param arenaName the name of the arena
      * @return Map of key-value pairs, where the key is an incremental ordinal number starting at 1.
      * @deprecated Labeled as deprecated to prevent accidental usage.
      */
@@ -247,12 +251,12 @@ public class BombArena extends EodArena {
     }
     
     /**
-     * This is called from onStart() and assigns both Teams to a base. <br/><br/>
+     * This is called from onStart() and assigns both Teams to a base.
      * 
      * Since teams are assigned to a base, we can use this information to prevent them from 
-     * trying to destroy their own base. <br/><br/>
+     * trying to destroy their own base.
      * 
-     * And force them to destroy the other teams base. <br/><br/>
+     * And force them to destroy the other teams base.
      * 
      * @param bothTeams - Assign bases for what teams ?
      */

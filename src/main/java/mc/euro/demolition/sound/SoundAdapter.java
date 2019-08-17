@@ -696,6 +696,9 @@ public class SoundAdapter {
      * This method can return null, which is fine as long as you don't dispatch
      * any methods, like toString(). Otherwise, it's safe to pass null to
      * playSound()
+     *
+     * @param x the name of the sound
+     * @return the proper sound
      */
     public static Sound getSound(String x) throws IllegalArgumentException {
         String name = (x == null) ? null : x.replace(".", "_").toUpperCase().trim();

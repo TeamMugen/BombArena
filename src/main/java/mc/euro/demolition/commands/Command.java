@@ -5,7 +5,7 @@ import mc.euro.version.VersionFactory;
 
 /**
  * This class handles backwards compatibility for different 
- * versions of BattleArena commands. <br/><br/>
+ * versions of BattleArena commands.
  * 
  * <pre>
  * 

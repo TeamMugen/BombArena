@@ -3,7 +3,7 @@ package mc.euro.demolition.tracker;
 import mc.alk.tracker.objects.WLT;
 
 /**
- * This class defines wins, losses, and ties. <br/><br/>
+ * This class defines wins, losses, and ties.
  * <pre>
  * WIN = getPlantSuccess()
  * LOSS = getPlantFailure()

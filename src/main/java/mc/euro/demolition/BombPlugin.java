@@ -48,7 +48,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Bukkit plugin that adds the Demolition game types: Sabotage & Search N Destroy. <br/><br/>
+ * Bukkit plugin that adds the Demolition game types: Sabotage and Search N Destroy.
  * 
  * @author Nikolai
  */
@@ -57,10 +57,10 @@ public class BombPlugin extends JavaPlugin {
     private static final Logger log = Logger.getLogger(BombPlugin.class.getCanonicalName());
     
     /**
-     * Adds Bombs Planted and Bombs Defused to the database. <br/>
-     * WLT.WIN = Bomb Planted Successfully (opponents base was destroyed). <br/>
-     * WLT.LOSS = Plant Failure caused by enemy defusal of the bomb. <br/>
-     * WLT.TIE = Bomb Defused by the player. <br/>
+     * Adds Bombs Planted and Bombs Defused to the database.
+     * WLT.WIN = Bomb Planted Successfully (opponents base was destroyed).
+     * WLT.LOSS = Plant Failure caused by enemy defusal of the bomb.
+     * WLT.TIE = Bomb Defused by the player.
      * Notice that in the database, Ties = Losses.
      */
     public PlayerStats ti;
@@ -68,11 +68,11 @@ public class BombPlugin extends JavaPlugin {
     public CustomConfig basesYml;
     
     /**
-     * debug = new DebugOn(); <br/>
-     * debug = new DebugOff(); <br/>
-     * debug.log("x = " + x); <br/>
-     * debug.messagePlayer(p, "debug msg"); <br/>
-     * debug.msgArenaPlayers(match.getPlayers(), "info"); <br/><br/>
+     * debug = new DebugOn();
+     * debug = new DebugOff();
+     * debug.log("x = " + x);
+     * debug.messagePlayer(p, "debug msg");
+     * debug.msgArenaPlayers(match.getPlayers(), "info");
      * 
      */
     public DebugInterface debug;
@@ -104,7 +104,7 @@ public class BombPlugin extends JavaPlugin {
     private boolean GiveCompass = true;
     
     /**
-     * Hinderances to backwards compatibility:. <br/><br/>
+     * Hinderances to backwards compatibility:.
      * 
      * <b>BA.Version - Class.method() - return type </b>
      * <pre>
@@ -250,9 +250,9 @@ public class BombPlugin extends JavaPlugin {
     }
     
     /**
-     * Used to find a nearby BaseBlock. <br/><br/>
+     * Used to find a nearby BaseBlock.
      * 
-     * Used by assignBases() and setbase() command. <br/><br/>
+     * Used by assignBases() and setbase() command.
      * 
      * @param loc Scan blocks near this location.
      * @return Does not return null: If no block is found, the original loc param is returned.
@@ -511,13 +511,13 @@ public class BombPlugin extends JavaPlugin {
     }
     
     /**
-     * Use-case scenario:. <br/><br/>
+     * Use-case scenario:.
      * 
-     * Admin creates arenas: They get created with the current bomb block. <br/>
-     * Admin then changes the bomb block inside config.yml. <br/>
-     * Then all the previously created arenas in arenas.yml will need to be updated. <br/>
+     * Admin creates arenas: They get created with the current bomb block.
+     * Admin then changes the bomb block inside config.yml.
+     * Then all the previously created arenas in arenas.yml will need to be updated.
      * 
-     * <b>arenas.yml:</b> PATH = "arenas.{arenaName}.spawns.{index}.spawn" <br/><br/>
+     * <b>arenas.yml:</b> PATH = "arenas.{arenaName}.spawns.{index}.spawn"
      * <pre>
      * arenas:
      *   arenaName:

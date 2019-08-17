@@ -29,7 +29,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Commands shared by BombArena & SndArena. <br/><br/>
+ * Commands shared by BombArena and SndArena.
  * 
  * @author Nikolai
  */
@@ -167,6 +167,10 @@ public abstract class EodExecutor extends CustomCommandExecutor {
     /**
      * Shows bomb arena stats for the command sender.
      * Example Usage: /bomb stats top 5
+     *
+     * @param cs the sender of the command
+     * @param n the page of the stats
+     * @return if the stats sent properly
      */
     @MCCommand(cmds={"stats"}, subCmds={"top"}, perm="bomb.stats.top", usage="stats top X")
     public boolean stats(CommandSender cs, Integer n) {
@@ -206,6 +210,9 @@ public abstract class EodExecutor extends CustomCommandExecutor {
     
     /**
      * For use after you edit config.yml
+     *
+     * @param sender the sender of the command
+     * @return if the yml reloaded properly
      */
     @MCCommand(cmds={"reloadconfig"}, perm="bombarena.setconfig")
     public boolean reloadConfig(CommandSender sender) {
@@ -326,6 +333,9 @@ public abstract class EodExecutor extends CustomCommandExecutor {
     /**
      * Toggles debug mode ON / OFF.
      * Usage: /bomb debug
+     *
+     * @param sender the sender of the command
+     * @return if debug
      */
     @MCCommand(cmds={"debug"}, perm="bombarena.debug", usage="debug")
     public boolean toggleDebug(CommandSender sender) {

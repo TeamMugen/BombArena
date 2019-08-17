@@ -5,14 +5,14 @@ import mc.alk.arena.objects.ArenaPlayer;
 import org.bukkit.entity.Player;
 
 /**
- * This class is the interface between DebugOn() and DebugOff(). <br/><br/>
+ * This class is the interface between DebugOn() and DebugOff().
  * 
- * It is used to print information about the state of objects and fields. <br/>
- * To see if they're within expected ranges. <br/><br/>
+ * It is used to print information about the state of objects and fields.
+ * To see if they're within expected ranges.
  * 
  * As you can see, Debug can be toggled on or off at runtime.
  * 
- * Examples: <br/>
+ * Examples:
  * <pre>
  * DebugInteraface debug = new DebugOn();
  * debug = new DebugOff();

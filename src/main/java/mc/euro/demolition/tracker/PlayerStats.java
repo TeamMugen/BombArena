@@ -38,7 +38,7 @@ public class PlayerStats {
     private void loadEnjin() {
         this.enjin = VersionFactory.getPluginVersion("EnjinMinecraftPlugin");
         if (enjin.isCompatible("2.6")) {
-            plugin.getLogger().info("EnjinMinecraftPlugin found & enabled.");
+            plugin.getLogger().info("EnjinMinecraftPlugin found and enabled.");
         } else {
             plugin.getLogger().info("EnjinMinecraftPlugin was not found or not compatible.");
         }

@@ -50,13 +50,13 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
 /**
- * EodArena is the parent for BombArena & SndArena. </br></br>
+ * EodArena is the parent for BombArena and SndArena.
  * 
  * <pre>
  * EOD = Explosive Ordnance Disposal.
- * EodArena contains all fields & methods common to both arenas.
+ * EodArena contains all fields and methods common to both arenas.
  * 
- * Altho BombArena & SndArena are very similar, each has their own rule-set.
+ * Altho BombArena and SndArena are very similar, each has their own rule-set.
  * 
  * For BombArena, the objective is to destroy the other teams base.
  * 
@@ -119,9 +119,9 @@ public abstract class EodArena extends Arena {
     }
     
     /**
-     * This will only cancel PlantTimer & DefuseTimer. <br/><br/>
+     * This will only cancel PlantTimer and DefuseTimer.
      * 
-     * Only the PlantTimer has the ability to cancel the DetonationTimer. <br/><br/>
+     * Only the PlantTimer has the ability to cancel the DetonationTimer.
      * 
      */
     public void cancelTimer(Player p) {
@@ -190,7 +190,7 @@ public abstract class EodArena extends Arena {
     }
     
     /**
-     * This method sets the compass direction when the bomb spawns. <br/><br/>
+     * This method sets the compass direction when the bomb spawns.
      * 
      * Without (needsPlayer=false), ItemSpawnEvent would break all other events.
      */ 
@@ -212,7 +212,7 @@ public abstract class EodArena extends Arena {
     } // END of ItemSpawnEvent
     
     /**
-     * This method makes sure that the bomb doesn't despawn during a match. <br/><br/>
+     * This method makes sure that the bomb doesn't despawn during a match.
      * 
      * <pre>
      * - is the item a bomb ?
@@ -268,7 +268,7 @@ public abstract class EodArena extends Arena {
     
     /**
      * This method handles the exploit where players try to break their BaseBlock
-     * to prevent the other team from planting the bomb or defusing it. <br/><br/>
+     * to prevent the other team from planting the bomb or defusing it.
      * 
      * @param e BlockBreakEvent - Is it the base block ?
      */
@@ -285,15 +285,15 @@ public abstract class EodArena extends Arena {
     
     /**
      * Handles the scenario when players attempt to place the bomb on the ground
-     * like it's a block. <br/><br/>
+     * like it's a block.
      *
      * This method is going to help out new players by checking the distance to
-     * the base:<br/>
+     * the base:
      *
      * - if the distance is small, then trigger onBombPlant(InventoryOpenEvent
-     * e). <br/>
+     * e).
      * - if they're too far away, then give the player helpful hints about the
-     * distance and compass direction to the enemy base. <br/>
+     * distance and compass direction to the enemy base.
      *
      * @param e BlockPlaceEvent - Is it the bomb block ?
      */
@@ -330,7 +330,7 @@ public abstract class EodArena extends Arena {
     } // END OF onBaseInteraction()
     
     /**
-     * This event handles planting & defusing the bomb. <br/>
+     * This event handles planting and defusing the bomb.
      * 
      * <pre>
      * Exit Conditions:
@@ -380,15 +380,15 @@ public abstract class EodArena extends Arena {
     } // END OF InventoryOpenEvent
     
     /**
-     * Handles the event where the player does NOT complete the time required to plant/defuse the bomb. <br/>
+     * Handles the event where the player does NOT complete the time required to plant/defuse the bomb.
      * 
-     * Notice that are multiple ways to trigger this event: <br/>
+     * Notice that are multiple ways to trigger this event:
      * - The bomb carrier prematurely closes the Brewing Stand 
-     *   thereby canceling the plant process. <br/>
-     * - The bomb carrier dies. <br/>
+     *   thereby canceling the plant process.
+     * - The bomb carrier dies.
      * - Also, when the PlantTimer is finished, it will close the player inventory.
      *   So we need to be careful that it doesn't also cancel the 30
-     * seconds that it takes to destroy the base. <br/><br/>
+     * seconds that it takes to destroy the base.
      *
      * @param e InventoryCloseEvent
      */
@@ -572,14 +572,14 @@ public abstract class EodArena extends Arena {
     }
     
     /**
-     * Points to a base to destroy, or a dropped/spawned bomb. <br/><br/>
+     * Points to a base to destroy, or a dropped/spawned bomb.
      * 
-     * When the bomb spawns, we need to set the compass direction. <br/>
-     * When the bomb is picked up, we need to set the compass direction. <br/>
-     * When the bomb is dropped, we need to set the compass direction. <br/><br/>
+     * When the bomb spawns, we need to set the compass direction.
+     * When the bomb is picked up, we need to set the compass direction.
+     * When the bomb is dropped, we need to set the compass direction.
      * 
      * This is to help out BOTH attackers and defenders find where they need to go 
-     * if they're unfamiliar with the map. <br/><br/>
+     * if they're unfamiliar with the map.
      */
     protected void setCompass(Location loc) {
         if (compass == null) compass = new CompassHandler(this);
@@ -587,14 +587,14 @@ public abstract class EodArena extends Arena {
     }
     
     /**
-     * First method called by BattleArena. <br/><br/>
+     * First method called by BattleArena.
      *
-     * Do NOT handle anything specific to matches here. <br/><br/>
+     * Do NOT handle anything specific to matches here.
      *
-     * BattleArena method order (during matches): <br/>
-     * 1. onStart() <br/>
-     * 2. onComplete() <br/>
-     * 3. onFinish() <br/>
+     * BattleArena method order (during matches):
+     * 1. onStart()
+     * 2. onComplete()
+     * 3. onFinish()
      *
      */
     @Override
@@ -610,14 +610,14 @@ public abstract class EodArena extends Arena {
             i = i + 1;
         }
         if (i != 2) {
-            plugin.getLogger().warning("BombArena & SndArena require exactly 2 teams.");
+            plugin.getLogger().warning("BombArena and SndArena require exactly 2 teams.");
             plugin.getLogger().warning("Match is being cancelled.");
             getMatch().cancelMatch();
         }
     }
     
     /**
-     * onComplete() is called before money is given. <br/><br/>
+     * onComplete() is called before money is given.
      * 
      * Order: onStart(), onComplete(), onFinish()
      */

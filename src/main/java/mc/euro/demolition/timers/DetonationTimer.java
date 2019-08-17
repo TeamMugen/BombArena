@@ -14,16 +14,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 /**
- * Example: new DetonationTimer(event, match, BOMB_LOCATION). <br/><br/>
+ * Example: new DetonationTimer(event, match, BOMB_LOCATION).
  * 
- * plugin.detTimers.put(match.getID(), new DetonationTimer(event, match, BOMB_LOCATION)); <br/>
- * plugin.detTimers.get(match.getID()).runTaskTimer(plugin, 0L, 20L); <br/>
- * player.closeInventory(); <br/><br/>
+ * plugin.detTimers.put(match.getID(), new DetonationTimer(event, match, BOMB_LOCATION));
+ * plugin.detTimers.get(match.getID()).runTaskTimer(plugin, 0L, 20L);
+ * player.closeInventory();
  * 
- * This is always the 2nd Timer to be started. <br/>
- * There can only be one DetonationTimer per match. <br/>
+ * This is always the 2nd Timer to be started.
+ * There can only be one DetonationTimer per match.
  * 
- * getPlayer() - used to get the player that started this timer. <br/>
+ * getPlayer() - used to get the player that started this timer.
  * 
  */
 public class DetonationTimer extends BukkitRunnable {

@@ -11,7 +11,7 @@ import mc.euro.demolition.arenas.SndArena;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Creates new instances of SndArena. <br/><br/>
+ * Creates new instances of SndArena.
  * 
  * Registration using ArenaFactory requires BattleArena v3.9.8+
  * 

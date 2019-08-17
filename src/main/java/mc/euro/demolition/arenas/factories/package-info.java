@@ -1,4 +1,4 @@
 /**
- * ArenaFactory->newArena() classes. <br/><br/>
+ * ArenaFactory-newArena() classes.
  */
 package mc.euro.demolition.arenas.factories;

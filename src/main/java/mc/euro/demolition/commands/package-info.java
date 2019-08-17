@@ -1,5 +1,5 @@
 /**
- * All (/bomb) sub-commands. <br/><br/>
+ * All (/bomb) sub-commands.
  * 
  * <pre>
  * /bomb stats

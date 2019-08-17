@@ -28,14 +28,14 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * SndArena = Search N Destroy game-mode from Call of Duty & Counterstrike.
+ * SndArena = Search N Destroy game-mode from Call of Duty and Counterstrike.
  * 
  * One team guards their bases, while the other teams attempts to destroy a base to win.
  *
  * <pre>
- * SndArena events & logic:
+ * SndArena events and logic:
  * onBombSpawn() - THIS BREAKS ALL OTHER EVENTS.
- * onBombPickup() - set HAT & compass.
+ * onBombPickup() - set HAT and compass.
  * onBombCarrierLeave() - if they log out or leave the arena.
  * onBombCarrierDeath() - drop it on the ground.
  * onBombDrop() - is it outside the map ?
@@ -67,6 +67,8 @@ public class SndArena extends EodArena {
     
     /**
      * This constructor requires BattleArena v3.9.8+.
+     *
+     * @param plugin the plugin
      */
     public SndArena(BombPlugin plugin) {
         super(plugin);
@@ -84,7 +86,7 @@ public class SndArena extends EodArena {
     }
     
     /**
-     * This method sets plugin.carriers, compass direction, and gives a hat. <br/><br/>
+     * This method sets plugin.carriers, compass direction, and gives a hat.
      *
      * <pre>
      * 1. Give the bomb carrier a hat so that other players know WHO has the bomb.
@@ -220,7 +222,7 @@ public class SndArena extends EodArena {
     }
     
     /**
-     * onStart() is called at the start of a Match. <br/><br/>
+     * onStart() is called at the start of a Match.
      *
      * Order: onStart(), onComplete(), onFinish()
      */
@@ -250,8 +252,8 @@ public class SndArena extends EodArena {
     }
     
     /**
-     * Used by BombPlugin->updateBasesYml() to transfer data from bases.yml to arenas.yml.
-     * @param arenaName
+     * Used by BombPlugin- updateBasesYml() to transfer data from bases.yml to arenas.yml.
+     * @param arenaName the name of the arena
      * @return Just a set of locations (no duplicates).
      * @deprecated Labeled as deprecated to prevent accidental usage.
      */
@@ -277,12 +279,11 @@ public class SndArena extends EodArena {
     
     /**
      * This is called from onStart() and assigns both Teams to a base.
-     * <br/><br/>
      *
      * Since teams are assigned to a base, we can use this information to
-     * prevent them from trying to destroy their own base. <br/><br/>
+     * prevent them from trying to destroy their own base.
      *
-     * And force them to destroy the other teams base. <br/><br/>
+     * And force them to destroy the other teams base.
      *
      * @param bothTeams - Assign bases for what teams ?
      */
