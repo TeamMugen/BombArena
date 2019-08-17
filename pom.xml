@@ -15,6 +15,10 @@
     <!-- Locations for jar repositories -->
     <repositories>
         <repository>
+            <id>battleplugins-repo</id>
+            <url>https://repo.battleplugins.org/artifactory/libs-release</url>
+        </repository>
+        <repository>
             <id>bukkit-repo</id>
             <url>http://repo.bukkit.org/content/groups/public</url>
         </repository>
@@ -178,9 +182,15 @@
         </plugins>
     </build>
     <distributionManagement>
-      <repository>
-        <id>rainbowcraft-repo</id>
-        <url>scp://rainbowcraft.sytes.net/var/www/maven/repository</url>
-      </repository>
+        <repository>
+            <id>central</id>
+            <name>BattlePlugins Maven Server-releases</name>
+            <url>https://repo.battleplugins.org/artifactory/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>BattlePlugins Maven Server-snapshots</name>
+            <url>https://repo.battleplugins.org/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
 </project>
