@@ -154,26 +154,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- Specify how we build the plugin.jar -->
-            <plugin>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <configuration>
-                <tasks>
-                    <copy file="target/BombArena.jar" tofile="../server/plugins/BombArena.jar"/>
-                    <copy file="target/BombArena.jar" tofile="../server/plugins-1.9/BombArena.jar"/>
-                    <copy file="target/BombArena.jar" tofile="../server/plugins-1.8/BombArena.jar"/>
-                    <copy file="target/BombArena.jar" tofile="../server/plugins-1.7/BombArena.jar"/>
-                </tasks>
-            </configuration>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>run</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
         </plugins>
     </build>
     <distributionManagement>
