@@ -71,11 +71,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.dsh105</groupId>
-            <artifactId>HoloAPI</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-        <dependency>
             <groupId>unknown.plugins</groupId>
             <artifactId>EnjinMinecraftPlugin</artifactId>
             <version>2.6.8</version>
