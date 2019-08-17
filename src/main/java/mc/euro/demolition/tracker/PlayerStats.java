@@ -1,7 +1,8 @@
 package mc.euro.demolition.tracker;
 
-import com.enjin.officialplugin.stats.StatsPlayer;
 import java.util.List;
+
+import com.enjin.bukkit.stats.StatsPlayer;
 import mc.alk.tracker.Tracker;
 import mc.alk.tracker.TrackerInterface;
 import mc.alk.tracker.objects.Stat;
@@ -60,15 +61,15 @@ public class PlayerStats {
         if (battletracker.isEnabled()) {
             tracker.addPlayerRecord(name, bombs, WLT.valueOf(wlt));
         }
-        /*
         if (enjin.isCompatible("2.6.0")) {
             StatsPlayer enjinStats = new StatsPlayer(Bukkit.getOfflinePlayer(name));
             String statName = null;
             if (wlt.equalsIgnoreCase("WIN")) statName = "Bases Destroyed Successfully";
             if (wlt.equalsIgnoreCase("LOSS")) statName = "Bomb Detonation Failures";
             if (wlt.equalsIgnoreCase("TIE")) statName = "Bombs Defused";
-            if (statName != null) enjinStats.addCustomStat("BombArena", statName, 1, true);
-        }*/
+            if (statName != null)
+                enjinStats.addCustomStat("BombArena", statName, 1, true);
+        }
     }
 
     public List<Stat> getTopXWins(int n) {
