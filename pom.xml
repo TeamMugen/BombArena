@@ -8,164 +8,50 @@
     <packaging>jar</packaging>
     <name>Demolition</name>
     <properties>
+        <java.version>17</java.version>
         <maven.build.timestamp.format>MMdd</maven.build.timestamp.format>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <url>http://dev.bukkit.org/bukkit-plugins/bombarena/</url>
-    <!-- Locations for jar repositories -->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
     <repositories>
         <repository>
-            <id>battleplugins-repo</id>
-            <url>https://repo.battleplugins.org/artifactory/libs-release-local/</url>
-        </repository>
-        <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/groups/public</url>
-        </repository>
-        <repository>
-            <id>md_5-snapshots</id>
-            <url>http://repo.md-5.net/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>sk89q-repo</id>
-            <url>http://maven.sk89q.com/repo/</url>
-        </repository>
-        <repository>
-            <id>vault-repo</id>
-            <url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
-        </repository>
-        <repository>
-            <id>kitteh-repo</id>
-            <url>http://repo.kitteh.org/content/repositories/public/</url>
-        </repository>
-        <repository>
-            <id>codemc-repo</id>
-            <url>https://repo.codemc.org/repository/maven-public/</url>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
     <!-- Dependencies -->
     <dependencies>
         <!-- Dependencies that have maven repos -->
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.7.2-R0.3</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>mc.alk</groupId>
-            <artifactId>BattleArena</artifactId>
-            <version>3.9.14.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>mc.alk</groupId>
-            <artifactId>BattleTracker</artifactId>
-            <version>2.5.10.4</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.gmail.filoghost.holographicdisplays</groupId>
-            <artifactId>holographicdisplays-api</artifactId>
-            <version>2.3.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>unknown.plugins</groupId>
-            <artifactId>EnjinMinecraftPlugin</artifactId>
-            <version>3.5.10</version>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.20.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>mc.euro</groupId>
-            <artifactId>Version</artifactId>
-            <version>4.0.1</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <artifactId>arena</artifactId>
+            <version>4.0.0</version>
         </dependency>
     </dependencies>
-    <!-- How we will compile the plugin -->
-    <build>
-        <finalName>BombArena</finalName>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh</artifactId>
-                <version>3.2.0</version>
-            </extension>
-        </extensions>
-        <defaultGoal>package</defaultGoal>
-        <!-- Where our source directory is -->
-        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-        <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
-        <!-- Include all the resources we need -->
-        <resources>
-            <resource>
-                <targetPath>.</targetPath>
-                <filtering>true</filtering>
-                <directory>${basedir}/src/main/java</directory>
-                <includes>
-                    <include>*.yml</include>
-                </includes>
-            </resource>
-        </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.1</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <!-- Shade (includes these in the final jar) -->
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <relocations>
-                                <relocation>
-                                    <pattern>mc.euro.version</pattern>
-                                    <shadedPattern>${project.groupId}.${project.artifactId}.version</shadedPattern>
-                                </relocation>
-                            </relocations>
-
-                            <artifactSet>
-                                <includes>
-                                    <include>mc.euro:Version</include>
-                                </includes>
-                            </artifactSet>
-                            <!-- Specify to remove all unneeded classes -->
-                            <minimizeJar>true</minimizeJar>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-    <distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>BattlePlugins Maven Server-releases</name>
-            <url>https://repo.battleplugins.org/artifactory/libs-release-local</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>BattlePlugins Maven Server-snapshots</name>
-            <url>https://repo.battleplugins.org/artifactory/libs-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>

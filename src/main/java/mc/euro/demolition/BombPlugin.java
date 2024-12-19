@@ -7,15 +7,6 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import mc.alk.arena.BattleArena;
-import mc.alk.arena.controllers.BattleArenaController;
-import mc.alk.arena.objects.ArenaPlayer;
-import mc.alk.arena.objects.arenas.Arena;
-import mc.alk.arena.objects.spawns.ItemSpawn;
-import mc.alk.arena.objects.spawns.TimedSpawn;
-import mc.alk.arena.objects.victoryconditions.NoTeamsLeft;
-import mc.alk.arena.objects.victoryconditions.VictoryType;
-import mc.alk.arena.serializers.ArenaSerializer;
 import mc.euro.demolition.appljuze.ConfigManager;
 import mc.euro.demolition.appljuze.CustomConfig;
 import mc.euro.demolition.arenas.BombArena;
@@ -33,9 +24,8 @@ import mc.euro.demolition.holograms.HolographicDisplay;
 import mc.euro.demolition.sound.SoundAdapter;
 import mc.euro.demolition.tracker.PlayerStats;
 import mc.euro.demolition.util.BaseType;
-import mc.euro.version.Version;
-import mc.euro.version.VersionFactory;
 
+import org.battleplugins.arena.BattleArena;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
